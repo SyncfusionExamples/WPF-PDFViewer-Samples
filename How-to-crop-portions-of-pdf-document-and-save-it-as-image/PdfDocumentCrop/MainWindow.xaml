@@ -1,0 +1,66 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:syncfusion="http://schemas.syncfusion.com/wpf" mc:Ignorable="d" x:Class="InkAnnotate.MainWindow"
+        Title="Syncfusion Pdf Annotator" Icon="sf.ico">
+    <Grid x:Name="rootLayout" Background="#FF3B3737">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Times New Roman" Foreground="White" Text="Syncfusion Essential Pdf clipper" FontSize="25" Grid.Row="0" Grid.Column="1"></TextBlock>
+        <Canvas Background="White"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Grid.Row="2" Grid.Column="1" />
+        <ScrollViewer x:Name="scroller" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.Row="2" Grid.Column="1">
+            <Canvas HorizontalAlignment="Left" Background="Transparent" x:Name="canvas1" MouseUp="Canvas1_OnMouseUp" MouseMove="Canvas1_OnMouseMove" MouseDown="Canvas1_OnMouseDown">
+                
+            </Canvas>
+        </ScrollViewer>
+        <Button Style="{DynamicResource NormalButtonStyle}" x:Name="closeButton" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" Click="closeButton_Click" VerticalAlignment="Top"></Button>
+        <Button Style="{DynamicResource PrevPageNavigationButtonStyle}" x:Name="prevButton" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Center" Click="prevButton_Click"/>
+        <Button Style="{DynamicResource NextPageNavigationButtonStyle}" x:Name="nextButton" Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center" Click="nextButton_Click"/>
+        <Grid x:Name="pageNumberGrid" Grid.Row="1" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="currentPageBlock" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="0" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock Name="toatlPageBlock" FontSize="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="2" Background="Transparent" Foreground="White"></TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Text="/" Background="Transparent" Foreground="White" Grid.Row="0" Grid.Column="1"></TextBlock>
+        </Grid>
+        <Grid Grid.RowSpan="3" Grid.Row="1" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.4*"/>
+                <RowDefinition Height="1.0*"/>
+                <RowDefinition Height="3.9*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Width="110" Grid.Row="0" Height="50" Content="Include Rectangle" Name="btnIncludeRect" Click="BtnIncludeRect_OnClick"></Button>
+
+            <GroupBox Header="Document" VerticalAlignment="Center" HorizontalAlignment="Left" Width="160" BorderThickness="1,1,1,1" Foreground="#FFF4EAEA" Grid.Row="4" Grid.Column="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button Style="{DynamicResource CropButtonStyle}" Content="Crop" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"  Click="cropButton_Click"/>
+                    <Button Style="{DynamicResource OpenButtonStyle}" Content="Open" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"  Click="openButton_Click"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Brush Color"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" BorderThickness="1,1,1,1" Foreground="#FFF4EAEA" Grid.Row="2" Grid.Column="3">
+                <syncfusion:ColorEdit ColorChanged="brushColor_Changed" Color="#55ff0000" Height="200" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,8,0,18" />
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

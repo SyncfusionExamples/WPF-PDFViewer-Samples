@@ -1,0 +1,14 @@
+﻿<Window x:Class="Sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sample"
+        mc:Ignorable="d"
+         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded" >
+    <Grid>
+        <Button Name="btn" Content="Image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="50" Height="30" Click="Button_Click" />
+        <syncfusion:PdfViewerControl x:Name="pdfViewer" Margin="0,35,0,0"/>
+    </Grid>
+</Window>

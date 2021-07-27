@@ -1,0 +1,23 @@
+﻿<Window x:Class="SampleWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleWPF"
+        mc:Ignorable="d"
+        xmlns:Syncfusion="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Grid x:Name="ParentGrid"  >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="103*"></ColumnDefinition>
+            <ColumnDefinition Width="414*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <Syncfusion:PdfViewerControl Grid.Column="1" x:Name="PdfViewer" />
+        <ScrollViewer  Grid.Column="0">
+        <Grid  x:Name="ThumbnailGrid" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+         
+        </Grid>
+          </ScrollViewer>
+    </Grid>
+</Window>

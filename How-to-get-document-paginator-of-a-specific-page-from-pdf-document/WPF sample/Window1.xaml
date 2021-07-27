@@ -1,0 +1,10 @@
+﻿<Window x:Class="GettingStarted_2008.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="SampleWPF" Height="300" Width="300"
+        ResizeMode="CanResize"  WindowStyle="SingleBorderWindow" WindowState="Normal">
+    <Grid>
+        <Button Content="Get Document Paginator" Height="auto" Width="auto" HorizontalAlignment="Center" VerticalAlignment="Center" Click="button1_Click"></Button>
+    </Grid>
+</Window>
+    

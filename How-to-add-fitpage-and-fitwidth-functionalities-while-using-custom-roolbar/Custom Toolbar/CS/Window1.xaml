@@ -1,0 +1,36 @@
+﻿<Window x:Class="ToolbarCustomization_2008.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF" Loaded="Window_Loaded"
+    Title="Custom Toolbar" Width="551" WindowState="Maximized" Height="837">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"></RowDefinition>
+                <RowDefinition Height="28"></RowDefinition>
+                <RowDefinition Height="770*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <DockPanel Height="0" Margin="0,0,0,28"></DockPanel>
+            <ToolBar Height="Auto" HorizontalAlignment="Left" Name="CustomToolbar" VerticalAlignment="Top" Width="Auto" Grid.Row="1">
+                <DockPanel>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Open Pdf file" Name="Open" VerticalAlignment="Top" Width="35" DockPanel.Dock="Left" Click="Open_Click">
+                        <Image Source="{StaticResource MyImageSource}" />
+                    </Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Go To First page" Name="First" VerticalAlignment="Top" Width="35" DockPanel.Dock="Left" Click="First_Click"></Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Go To Previous page" Name="Previous" VerticalAlignment="Top" Width="35" DockPanel.Dock="Left" Click="Previous_Click">Previous</Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Go To Next page" Name="Next" VerticalAlignment="Top" Width="35" DockPanel.Dock="Left" Click="Next_Click">Next</Button>
+                    <Button Height="23" Margin="10,0,0,0" Name="Last" ToolTip="Go To Last page" VerticalAlignment="Top" HorizontalAlignment="Left" Width="35" DockPanel.Dock="Left" Click="Last_Click">Last</Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="FitPage" Name="fitPage" VerticalAlignment="Top" DockPanel.Dock="Left" Width="35" Click="fitPage_Click">
+                        <Image Source="{StaticResource FitPageSource}"/>
+                    </Button>
+                    <Button Height="23" Margin="10,0,0,0" Name="fitWidth" ToolTip="FitWidth" VerticalAlignment="Top" HorizontalAlignment="Left" Width="35" Click="fitWidth_Click">
+                    <Image Source="{StaticResource FitWidthSource}"/>
+                    </Button>
+                </DockPanel>
+            </ToolBar>
+            <my:PdfViewerControl Name="pdfViewerControl" ShowToolbar="False" Grid.Row="2"/>
+          
+        </Grid>
+    </Grid>
+</Window>

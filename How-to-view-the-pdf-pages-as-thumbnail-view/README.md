@@ -1,0 +1,3 @@
+# How to view the PDF pages as thumbnail view in WPF PDFViewer?
+
+[WPF PdfViewer](https://www.syncfusion.com/wpf-controls/pdf-viewer) control does not support thumbnail view. However, as a workaround, the PDF document pages can be viewed as thumbnail by exporting the pages of the PDF document as images using the PdfLoadedDocument.ExportAsImage() API. Clicking the thumbnail image will navigate to the corresponding page in PdfViewerControl.

@@ -1,0 +1,11 @@
+﻿<Application x:Class="ToolbarCustomization_2008.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    StartupUri="Window1.xaml">
+    <Application.Resources>
+        <BitmapImage x:Key="MyImageSource" UriSource="../Icon/OpenFile.png"/>
+        <BitmapImage x:Key="FitPageSource" UriSource="../Icon/FitPage.png"/>
+        <BitmapImage x:Key="FitWidthSource" UriSource="../Icon/FitWidth.png"/>
+    </Application.Resources>
+    
+</Application>

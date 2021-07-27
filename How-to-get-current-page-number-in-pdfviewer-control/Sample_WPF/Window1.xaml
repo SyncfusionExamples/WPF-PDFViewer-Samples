@@ -1,0 +1,21 @@
+﻿<Window x:Class="GettingStarted_2008.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Pdf Viewer Demo" Height="300" Width="300"
+        xmlns:cc="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
+        ResizeMode="CanResizeWithGrip" WindowStyle="SingleBorderWindow" Loaded="Window_Loaded"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="9.5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock HorizontalAlignment="Left" Margin="56,10,0,0" TextWrapping="Wrap" Text="Current Page" VerticalAlignment="Center"/>
+            <TextBox Name="pagenumberTxtbox" HorizontalAlignment="Left" Height="23" Margin="138,9,0,0" Text="" VerticalAlignment="Center" Width="30" IsReadOnly="True"/>
+        </Grid>
+        <Grid Grid.Row="1">
+        <cc:PdfDocumentView x:Name="pdfviewer1" />
+        </Grid>
+    </Grid>
+</Window>
