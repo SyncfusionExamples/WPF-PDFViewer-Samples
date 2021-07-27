@@ -15,3 +15,9 @@ Repository contains various WPF PDFViewer samples.
 12. [How to export the pages in PDF document to multi-page tiff image in WPF PDFViewer?](https://www.syncfusion.com/kb/7036/how-to-export-the-pages-in-the-pdf-document-to-multi-page-tiff-image)
 13. [How to get DocumentPaginator of a specific page from the PDF document in WPF PDFViewer?](https://www.syncfusion.com/kb/6119/how-to-get-the-documentpaginator-of-a-specific-page-from-the-pdf-document) - Demo
 14. [How to get the current page number in PDFViewer control?](https://www.syncfusion.com/kb/6103/how-to-get-the-current-page-number-in-pdfdocumentview-control) - Demo
+15. [How to read the PDF document from the remote URL and display it in WPF PDFViewer control?](https://www.syncfusion.com/kb/5848/how-to-read-the-pdf-document-from-the-remote-url-and-display-it-in-pdfviewercontrol) - Demo
+16. [How to print the PDF document as vector images in WPF PDFViewer?](https://www.syncfusion.com/kb/5840/how-to-print-the-pdf-document-as-vector-images-in-wpf) - Demo
+17. [How to include popup annotation in PDF document using WPF PDFViewer?](https://www.syncfusion.com/kb/5839/how-to-include-popup-annotation-in-pdf-document-using-pdf-viewer-for-wpf) - Demo
+18. [How to crop portions of PDF document and save it as image in WPF PDFViewer?](https://www.syncfusion.com/kb/4976/how-to-crop-portions-of-pdf-document-and-save-it-as-image) - Demo
+19. [How to supports silent printing particular page range from the PDF document in WPF PDFViewer?](https://www.syncfusion.com/kb/3666/does-the-pdf-viewer-wpf-supports-silent-printing-particular-page-range-from-the-pdf) - Demo
+20. [How to add fitpage and fitwidth functionalities while using custom toolbar in WPF PDFViewer?](https://www.syncfusion.com/kb/3402/how-to-add-fitpage-and-fitwidth-functionalities-while-using-custom-toolbar) - Demo

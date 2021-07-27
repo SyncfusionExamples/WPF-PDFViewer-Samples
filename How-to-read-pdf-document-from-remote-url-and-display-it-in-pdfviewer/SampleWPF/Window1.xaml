@@ -1,0 +1,13 @@
+﻿<Window 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:cc="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
+        xmlns:local="clr-namespace:GettingStarted_2008" xmlns:PdfViewer="clr-namespace:Syncfusion.Windows.PdfViewer" xmlns:UI="clr-namespace:GettingStarted_2008.UI" x:Class="GettingStarted_2008.Window1"
+    Title="Pdf Viewer Demo"
+        ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" Height="1019" Width="1388">
+
+    <Grid Margin="0,0,0,1">
+        <cc:PdfViewerControl Name="pdfViewer"/>
+    </Grid>
+
+</Window>
