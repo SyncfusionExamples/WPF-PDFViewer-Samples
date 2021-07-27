@@ -1,0 +1,14 @@
+﻿<syncfusion:ChromelessWindow x:Class="GettingStarted_2008.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+	syncfusion:SkinStorage.VisualStyle="Metro"
+	
+    Title="Getting Started" Height="300" Width="300"
+        xmlns:cc="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
+        WindowState="Maximized" Loaded="Window_Loaded"
+        >
+    <Grid>
+      <cc:PdfViewerControl Name="pdfViewerControl1" />
+    </Grid>
+</syncfusion:ChromelessWindow>
