@@ -20,12 +20,20 @@ namespace PDFToJPEGSample
             InitializeComponent();
             PdfViewerControl pdfViewer = new PdfViewerControl();
             //Load the input PDF file
+#if NETCOREAPP
+            PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../../Data/Barcode.pdf");
+#else
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../Data/Barcode.pdf");
+#endif
             pdfViewer.Load(loadedDocument);
             //Export the images From the input PDF file at the page range of 0 to 1 .
             BitmapSource[] image = pdfViewer.ExportAsImage(0, loadedDocument.Pages.Count - 1);
             //Setup the output path
+#if NETCOREAPP
+            string output = @"..\..\..\Output\Image";
+#else
             string output = @"..\..\Output\Image";
+#endif
             if (image != null)
             {
                 for (int i = 0; i < image.Length; i++)

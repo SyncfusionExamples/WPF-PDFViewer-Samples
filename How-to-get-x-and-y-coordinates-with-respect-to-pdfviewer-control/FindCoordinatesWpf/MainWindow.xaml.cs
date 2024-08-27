@@ -11,7 +11,11 @@ namespace FindCoordinatesWpf
         public MainWindow()
         {
             InitializeComponent();
-            PdfViewer.Load("../../Data/GIS Succinctly.pdf");
+#if NETCOREAPP
+            PdfViewer.Load("../../../Data/GIS Succinctly.pdf");
+#else
+            PdfViewer.Load("../../Data/GIS Succinctly.pdf"); 
+#endif
             PdfViewer.MouseUp += PdfViewer_MouseUp;
         }
 

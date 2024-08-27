@@ -101,8 +101,11 @@ namespace PrintPagerange
         /// </summary>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+#if NETCOREAPP
+            pdfDocumentview.Load("../../../Data/Manual.pdf");
+#else
             pdfDocumentview.Load("../../Data/Manual.pdf");
-
+#endif
             int count = pdfDocumentview.PageCount;
             for (int i = 1; i < count + 1; i++)
             {
@@ -114,6 +117,6 @@ namespace PrintPagerange
             comboBoxTo.SelectedIndex = count - 1;
             rangeStackPanel.IsEnabled = false;
         }
-        #endregion
+#endregion
     }
 }

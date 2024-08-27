@@ -41,18 +41,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Syncfusion.Compression.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\13.2.0.34\precompiledassemblies\13.2.0.34\4.5.1\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Pdf.Base">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\13.2.0.34\precompiledassemblies\13.2.0.34\4.5.1\Syncfusion.Pdf.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PdfViewer.WPF">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\13.2.0.34\precompiledassemblies\13.2.0.34\4.5.1\Syncfusion.PdfViewer.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.WPF">
-      <HintPath>C:\Program Files (x86)\Syncfusion\Essential Studio\13.2.0.34\precompiledassemblies\13.2.0.34\4.5.1\Syncfusion.Shared.WPF.dll</HintPath>
-    </Reference>
+    <packageReference Include="Syncfusion.Compression.Base" version="*"/>
+    <packageReference Include="Syncfusion.Pdf.Base" version="*"/>
+    <packageReference Include="Syncfusion.PdfViewer.WPF" version="*"/>
+    <packageReference Include="Syncfusion.Shared.WPF" version="*"/>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -100,8 +92,8 @@
     <Compile Include="UI\CustomToolBar.xaml.cs">
       <DependentUpon>CustomToolBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="Window1.g.cs">
+      <DependentUpon>Window1.g.cs</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

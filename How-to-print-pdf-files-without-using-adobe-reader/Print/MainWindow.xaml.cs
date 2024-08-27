@@ -35,9 +35,11 @@ namespace Print
             PdfViewerControl pdfViewer1 = new PdfViewerControl();
 
             //Load the PDF.
-
-            pdfViewer1.Load(@"../../Data/Windows Store Apps Succinctly.pdf");
-
+#if NETCOREAPP
+            pdfViewer1.Load(@"../../../Data/Windows Store Apps Succinctly.pdf");
+#else
+             pdfViewer1.Load(@"../../Data/Windows Store Apps Succinctly.pdf");
+#endif
             // Printing document using Print method
 
             pdfViewer1.Print();

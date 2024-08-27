@@ -33,7 +33,11 @@ namespace Sample
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+#if NETCOREAPP
+            loadedDocument = new PdfLoadedDocument("../../../Data/GIS Succinctly.pdf");
+#else
             loadedDocument = new PdfLoadedDocument("../../Data/GIS Succinctly.pdf");
+#endif
             pdfUnitConvertor = new PdfUnitConvertor();
             //Load the document
             pdfViewer.Load(loadedDocument);
@@ -43,7 +47,11 @@ namespace Sample
         {
             //Gets the point where an image to be add
             System.Windows.Point point = args.Position;
+#if NETCOREAPP
+            PdfImage newImage = PdfImage.FromFile("../../../Data/NWTraders.jpeg");
+#else
             PdfImage newImage = PdfImage.FromFile("../../Data/NWTraders.jpeg");
+#endif
             //point conversion
             float x = pdfUnitConvertor.ConvertFromPixels((float)args.Position.X, PdfGraphicsUnit.Point);
             float y = pdfUnitConvertor.ConvertFromPixels((float)args.Position.Y, PdfGraphicsUnit.Point);

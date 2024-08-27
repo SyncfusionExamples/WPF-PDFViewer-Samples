@@ -23,7 +23,11 @@ namespace ImprovedQualityWpf
         public MainWindow()
         {
             InitializeComponent();
+#if NETCOREAPP
+            pdfViewer1.Load(@"..\..\..\Data\F# Succinctly.pdf");
+#else
             pdfViewer1.Load(@"..\..\Data\F# Succinctly.pdf");
+#endif
         }
     }
 }

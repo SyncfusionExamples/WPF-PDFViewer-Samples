@@ -27,7 +27,7 @@ namespace GettingStarted_2008
     public partial class Window1 : Window
     {
         GettingStarted_2008.UI.CustomToolBar ctool;
-        # region Constructor
+        #region Constructor
         public Window1()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace GettingStarted_2008
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             WebClient client = new WebClient();
-            byte[] myDataBuffer = client.DownloadData((new Uri("http://www.telmi.lt/wp-content/uploads/2013/02/Simple.pdf")));
+            byte[] myDataBuffer = client.DownloadData((new Uri("Enter the PDF URL here")));
 
             MemoryStream storeStream = new MemoryStream();
 

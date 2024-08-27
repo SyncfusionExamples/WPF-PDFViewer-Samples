@@ -31,7 +31,11 @@ namespace SampleWPF
         int thumbnailZoomFactor = 4;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+#if NETCOREAPP
+            PdfViewer.Load(@"..\..\..\Data\HTTP Succinctly.pdf");
+#else
             PdfViewer.Load(@"..\..\Data\HTTP Succinctly.pdf");
+#endif
             ThumbnailGrid.Background = new SolidColorBrush(System.Windows.Media.Color.FromRgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237))))));
             PdfViewer.DocumentLoaded += PdfViewer_DocumentLoaded;
             

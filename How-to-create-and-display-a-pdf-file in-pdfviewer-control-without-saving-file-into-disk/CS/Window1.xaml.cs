@@ -31,12 +31,9 @@ namespace GettingStarted_2008
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : ChromelessWindow
+    public partial class Window1 : Window 
     {
-        # region Private Members
-        private string fileName;
-        private string filePath;
-        # endregion
+
 
         # region Constructor
         public Window1()
@@ -49,7 +46,7 @@ namespace GettingStarted_2008
             this.Left = System.Windows.SystemParameters.PrimaryScreenWidth / 6;
             this.Top = 5;
             this.WindowState = WindowState.Maximized;
-            this.UseNativeChrome = true;
+           
         }
         # endregion
 

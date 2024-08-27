@@ -30,7 +30,11 @@ namespace GettingStarted_2008
         private void button_Click(object sender, RoutedEventArgs e)
         {
             //create an instance for PdfLoadedDocument
+#if NETCOREAPP
+            PdfLoadedDocument ldoc = new PdfLoadedDocument("../../../Data/Manual.pdf");
+#else
             PdfLoadedDocument ldoc = new PdfLoadedDocument("../../Data/Manual.pdf");
+#endif
             //ExportAsImage method returns specified page in the PDF document as Bitmap image 
             Bitmap[] images = ldoc.ExportAsImage(0, ldoc.Pages.Count - 1);
             //Tiff conversion
@@ -49,7 +53,11 @@ namespace GettingStarted_2008
                 {
                     tiff = images[i];
                     //Save the tiff image into local disk
-                    tiff.Save("../../Output/output.tiff", encoderInfo, encoderParams);
+#if NETCOREAPP
+                    tiff.Save("../../../Output/output.tiff", encoderInfo, encoderParams);
+#else
+                      tiff.Save("../../Output/output.tiff", encoderInfo, encoderParams);
+#endif
                 }
                 else
                 {

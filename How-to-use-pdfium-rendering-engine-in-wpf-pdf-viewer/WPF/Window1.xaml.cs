@@ -26,7 +26,7 @@ namespace GettingStarted_2008
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : ChromelessWindow
+    public partial class Window1 : Window
     {
 	    //Local path to locate Pdfium folder
         string pdfiumPath = @"D:\";
@@ -44,7 +44,11 @@ namespace GettingStarted_2008
             if (Directory.Exists(pdfiumPath + "Pdfium"))
             {
                 //Load the PDF document in PDF viewer.
+#if NETCOREAPP
+                pdfViewerControl1.Load(@"../../../Data/PDF_Succinctly.pdf");
+#else
                 pdfViewerControl1.Load(@"../../Data/PDF_Succinctly.pdf");
+#endif
             }
             else
             {

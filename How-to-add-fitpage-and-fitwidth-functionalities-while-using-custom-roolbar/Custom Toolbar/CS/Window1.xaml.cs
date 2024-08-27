@@ -52,7 +52,11 @@ namespace ToolbarCustomization_2008
             Previous.Content = "<";
             Next.Content = ">";
             Last.Content = ">>";
+#if NETCOREAPP
+            pdfViewerControl.Load("../../../Data/Barcode.pdf");
+#else
             pdfViewerControl.Load("../../Data/Barcode.pdf");
+#endif
         }
 
         /// <summary>
@@ -131,7 +135,7 @@ namespace ToolbarCustomization_2008
             if (pdfViewerControl.ZoomMode != ZoomMode.FitWidth)
                 pdfViewerControl.ZoomMode = ZoomMode.FitWidth;
         }
-        # endregion
+#endregion
 
         #region Helper methods
         private void LoadDocument(string fileName)

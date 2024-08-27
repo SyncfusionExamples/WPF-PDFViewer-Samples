@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{890979AA-F9DC-4734-B979-776908689CDD}</ProjectGuid>
+    <ProjectGuid>{36A0141C-5432-4960-B0AB-02FCDC1D2970}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GettingStarted_2008</RootNamespace>
     <AssemblyName>GettingStarted_2008</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -41,24 +41,16 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Syncfusion.Compression.Base">
-      <HintPath>..\..\..\Assemblies\16.1.0.24\4.6\Syncfusion.Compression.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Pdf.Base">
-      <HintPath>..\..\..\Assemblies\16.1.0.24\4.6\Syncfusion.Pdf.Base.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.PdfViewer.Wpf">
-      <HintPath>..\..\..\Assemblies\16.1.0.24\4.6\Syncfusion.PdfViewer.WPF.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf">
-      <HintPath>..\..\..\Assemblies\16.1.0.24\4.6\Syncfusion.Shared.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
+    <packageReference Include="Syncfusion.Compression.Base" version="*" />
+    <packageReference Include="Syncfusion.Pdf.Base" version="*" />
+    <packageReference Include="Syncfusion.PdfViewer.WPF" version="*" />
+    <packageReference Include="Syncfusion.Shared.WPF" version="*" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -79,6 +71,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Themes\ThemeDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CustomToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,8 +89,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UI\CustomToolBar.xaml.cs">
+      <DependentUpon>CustomToolBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+      <DependentUpon>Window1.xaml.cs</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -117,6 +120,26 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FitPage.png" />
+    <Resource Include="Resources\FitWindow.png" />
+    <Resource Include="Resources\GoToFirstPage_Disabled.png" />
+    <Resource Include="Resources\GoToFirstPage_Enabled.png" />
+    <Resource Include="Resources\GoToLastPage_Disabled.png" />
+    <Resource Include="Resources\GoToLastPage_Enabled.png" />
+    <Resource Include="Resources\GoToNextPage_Disabled.png" />
+    <Resource Include="Resources\GoToNextPage_Enabled.png" />
+    <Resource Include="Resources\GoToPreviousPage_Disabled.png" />
+    <Resource Include="Resources\GoToPreviousPage_Enabled.png" />
+    <Resource Include="Resources\pagelayout.bmp" />
+    <Resource Include="Resources\pdfviewer.bmp" />
+    <Resource Include="Resources\PrintDocument.png" />
+    <Resource Include="Resources\save.png" />
+    <Resource Include="Resources\ShowOnePage.png" />
+    <Resource Include="Resources\side.png" />
+    <Resource Include="Resources\ZoomIn.png" />
+    <Resource Include="Resources\ZoomOut.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

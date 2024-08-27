@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ToolbarCustomization_2008</RootNamespace>
     <AssemblyName>ToolbarCustomization_2008</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -20,6 +20,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,16 +43,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Syncfusion.Compression.Base" />
+    <PackageReference Include="Syncfusion.Compression.Base" version="*"/>
     <Reference Include="Syncfusion.Core" />
-
-    <Reference Include="Syncfusion.Pdf.Base" />
-    <Reference Include="Syncfusion.PdfViewer.WPF">
-      <SpecificVersion>False</SpecificVersion>
-     </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf">
-    <SpecificVersion>False</SpecificVersion>
-    </Reference>
+    <PackageReference Include="Syncfusion.Licensing" version="*"/>
+    <PackageReference Include="Syncfusion.Pdf.Base" version="*"/>
+    <PackageReference Include="Syncfusion.PdfToImageConverter.Base" version="*"/>
+    <PackageReference Include="Syncfusion.PdfViewer.WPF" version="*"/>
+    <PackageReference Include="Syncfusion.Shared.WPF" version="*"/>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -109,13 +108,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
- <ItemGroup>
+  <ItemGroup>
     <Resource Include="Icon\OpenFile.png" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +126,11 @@
     <Resource Include="Icon\FitWidth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Syncfusion.PdfToImageConverter.WPF.26.2.10\build\net462\Syncfusion.PdfToImageConverter.WPF.targets" Condition="Exists('packages\Syncfusion.PdfToImageConverter.WPF.26.2.10\build\net462\Syncfusion.PdfToImageConverter.WPF.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+    </PropertyGroup>
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

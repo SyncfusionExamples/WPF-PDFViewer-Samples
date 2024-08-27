@@ -26,8 +26,13 @@ namespace BatchPrinting
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             char[] charSplitter = new char[] { '/' };
+#if NETCOREAPP
             // Get the PDF files from the directory
+            files = Directory.GetFiles("../../../Data", "*.pdf");
+#else
+             // Get the PDF files from the directory
             files = Directory.GetFiles("../../Data/", "*.pdf");
+#endif
             foreach (string file in files)
             {
                 //Splitting the filename from the file path

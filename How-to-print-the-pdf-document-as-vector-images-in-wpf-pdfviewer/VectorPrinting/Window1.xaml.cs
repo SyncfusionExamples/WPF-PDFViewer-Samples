@@ -19,7 +19,7 @@ namespace VectorPrinting_2008
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : ChromelessWindow
+    public partial class Window1 : Window
     {
         # region Private Members
         private PdfDocumentView pdfViewer1;
@@ -30,15 +30,19 @@ namespace VectorPrinting_2008
         {
             InitializeComponent();
             ImageSourceConverter converter = new ImageSourceConverter();
+#if NETCOREAPP
+            this.Icon = (ImageSource)converter.ConvertFromString("../../../Data/pdf viewer.png");
+            this.image1.Source = (ImageSource)converter.ConvertFromString("../../../Data/pdf_header.png");
+#else
             this.Icon = (ImageSource)converter.ConvertFromString("../../Data/pdf viewer.png");
             this.image1.Source = (ImageSource)converter.ConvertFromString("../../Data/pdf_header.png");
-
+#endif
             pdfViewer1 = new PdfDocumentView();
             SkinStorage.SetMetroBrush(this, new SolidColorBrush(Color.FromArgb(255, 255, 255, 255)));
         }
-        # endregion
+#endregion
 
-        # region Events
+        #region Events
         /// <summary>
         /// Prints the select pages.
         /// </summary>
@@ -52,7 +56,11 @@ namespace VectorPrinting_2008
         /// </summary>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+#if NETCOREAPP
+            pdfViewer1.Load("../../../Data/Barcode.pdf");
+#else
             pdfViewer1.Load("../../Data/Barcode.pdf");
+#endif
         }
         #endregion
     }

@@ -45,7 +45,11 @@ namespace GettingStarted_2008
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             pdfviewer1.CurrentPageChanged += pdfviewer1_CurrentPageChanged;
-            pdfviewer1.Load("../../Data/GIS Succinctly.pdf");  
+#if NETCOREAPP
+            pdfviewer1.Load("../../../Data/GIS Succinctly.pdf");
+#else
+             pdfviewer1.Load("../../Data/GIS Succinctly.pdf");
+#endif
         }
 
         void pdfviewer1_CurrentPageChanged(object sender, EventArgs args)

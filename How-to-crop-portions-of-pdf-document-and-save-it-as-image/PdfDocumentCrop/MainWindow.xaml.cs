@@ -38,7 +38,11 @@ namespace InkAnnotate
         {
             InitializeComponent();
             this.WindowStyle = WindowStyle.None;
+#if NETCOREAPP
+            LoadDocument("../../../Data/Product Line Sales.pdf");
+#else
             LoadDocument("../../Data/Product Line Sales.pdf");
+#endif
         }
         #endregion
 
@@ -309,7 +313,11 @@ namespace InkAnnotate
                 BitmapEncoder encoder = new PngBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create(croppedBitmap));
                 String imageName = Guid.NewGuid().ToString() + ".png";
-                FileStream stream = new FileStream("../../Output/" + imageName, FileMode.Create);
+#if NETCOREAPP
+                FileStream stream = new FileStream("../../../Output/" + imageName, FileMode.Create);
+#else
+                 FileStream stream = new FileStream("../../Output/" + imageName, FileMode.Create);
+#endif
                 encoder.Save(stream);
             }
         }
@@ -348,7 +356,7 @@ namespace InkAnnotate
 
         }
 
-        #endregion
+#endregion
 
         #region Helper
 

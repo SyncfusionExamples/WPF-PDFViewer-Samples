@@ -53,7 +53,11 @@ namespace PDFViewerAnnotation
             //Loading palette items
             LoadSymbolPalette();
             //Loading the document
+#if NETCOREAPP
+            LoadDocument("../../../Data/Product Line Sales.pdf");
+#else
             LoadDocument("../../Data/Product Line Sales.pdf");
+#endif
         }
         #region Events
         //Node drop event

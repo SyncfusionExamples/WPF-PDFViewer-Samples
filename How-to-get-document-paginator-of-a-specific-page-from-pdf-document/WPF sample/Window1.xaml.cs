@@ -10,8 +10,8 @@ using System.Windows.Documents;
 using Syncfusion.Pdf.Parsing;
 using System.IO;
 using Syncfusion.Pdf;
-using System.Windows.Xps.Packaging;
 using Syncfusion.Windows.PdfViewer;
+using System.Windows.Xps.Packaging;
 
 namespace GettingStarted_2008
 {
@@ -34,8 +34,11 @@ namespace GettingStarted_2008
             PdfDocumentView pdfViewer = new PdfDocumentView();
 
             //Load the document in PdfLoadedDocument
+#if NETCOREAPP
+            PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../../Data/Objective C succinity.pdf");
+#else
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../Data/Objective C succinity.pdf");
-
+#endif
             //create an instance of PdfDocument
             PdfDocument document = new PdfDocument();
 
@@ -55,9 +58,13 @@ namespace GettingStarted_2008
                 
                 //get document paginator from fixed document
                 DocumentPaginator pdfPaginator = pdfPrintDocument.DocumentPaginator;
-               
+
                 //write the document pageinator as xps document.
+#if NETCOREAPP
+                var xpsDocument = new XpsDocument("../../../Data/output.xps", FileAccess.Write);
+#else
                 var xpsDocument = new XpsDocument("../../Data/output.xps", FileAccess.Write);
+#endif
                 var documentWriter = XpsDocument.CreateXpsDocumentWriter(xpsDocument);
                 documentWriter.Write(pdfPaginator);
                 xpsDocument.Close();
@@ -69,7 +76,7 @@ namespace GettingStarted_2008
             }
         }
             
-        # endregion
+#endregion
 
        
     }

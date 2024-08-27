@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 13.00
 # Visual Studio 2013
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomToolbar_2013", "CustomToolbar_2013.csproj", "{8423F28E-6AAB-4380-9746-21A9FA8DF90F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomToolbar_2017", "CustomToolbar_2017.csproj", "{8423F28E-6AAB-4380-9746-21A9FA8DF90F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

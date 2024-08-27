@@ -38,18 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Syncfusion.Compression.Base">
-      
-    </Reference>
-    <Reference Include="Syncfusion.Pdf.Base">
-      
-    </Reference>
-    <Reference Include="Syncfusion.PdfViewer.WPF">
-      
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf">
-      
-    </Reference>
+    <packageReference Include="Syncfusion.Compression.Base" version="*"/>
+    <packageReference Include="Syncfusion.Pdf.Base" version="*"/>
+    <packageReference Include="Syncfusion.PdfViewer.WPF" version="*"/>
+    <packageReference Include="Syncfusion.Shared.Wpf" version="*"/>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>

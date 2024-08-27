@@ -32,8 +32,13 @@ namespace SignatureField
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+#if NETCOREAPP
+            //Load the PDF document.
+            PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../../Data/Sample.pdf");
+#else
             //Load the PDF document.
             PdfLoadedDocument loadedDocument = new PdfLoadedDocument("../../Data/Sample.pdf");
+#endif
             //Flatten the form.
             loadedDocument.Form.Flatten = true;
 

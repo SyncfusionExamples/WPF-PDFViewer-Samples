@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 13.00
 # Visual Studio 14
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorPrinting_2015", "VectorPrinting_2015.csproj", "{4A773675-2630-4651-A36E-4E78C570B432}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectorPrinting_2017", "VectorPrinting_2017.csproj", "{4A773675-2630-4651-A36E-4E78C570B432}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
