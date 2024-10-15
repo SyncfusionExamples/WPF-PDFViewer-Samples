@@ -43,13 +43,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Syncfusion.Compression.Base" version="*"/>
-    <Reference Include="Syncfusion.Core" />
-    <PackageReference Include="Syncfusion.Licensing" version="*"/>
-    <PackageReference Include="Syncfusion.Pdf.Base" version="*"/>
-    <PackageReference Include="Syncfusion.PdfToImageConverter.Base" version="*"/>
     <PackageReference Include="Syncfusion.PdfViewer.WPF" version="*"/>
-    <PackageReference Include="Syncfusion.Shared.WPF" version="*"/>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -126,7 +120,6 @@
     <Resource Include="Icon\FitWidth.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\Syncfusion.PdfToImageConverter.WPF.26.2.10\build\net462\Syncfusion.PdfToImageConverter.WPF.targets" Condition="Exists('packages\Syncfusion.PdfToImageConverter.WPF.26.2.10\build\net462\Syncfusion.PdfToImageConverter.WPF.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
     </PropertyGroup>
